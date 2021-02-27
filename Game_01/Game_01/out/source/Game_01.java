@@ -15,36 +15,39 @@ import java.io.IOException;
 public class Game_01 extends PApplet {
 
 Board board;
+Car car;
 int x, y;
 
 public void setup() {
     
     background(0);
-    //board object
+
     board = new Board(width, height);
+    car = new Car(width, height);
+    
     x = width/2;
     y = height/2;
+    
 }
 
 public void draw() {
     background(0);
-    //devide window to 3 areas
     board.display();
 
-    rectMode(CENTER);
-    rect(x, y, 300, height/3);
+    
+    car.display();
+    car.move(x, y);
 }
 
 public void keyPressed() {
-    // if (key == CODED) {
+    if (key == CODED) {
         if (keyCode == LEFT) {
             if (x < width/3) {
                 x = x;
             } else {
                 x = x - (width/3);
             }
-            
-        } 
+        }
 
         if (keyCode == RIGHT) {
             if (x > (width/3) * 2) {
@@ -67,10 +70,12 @@ public void keyPressed() {
                 y = y;
             } else {
                 y = y + (height/3);
-             }
+            }
         }
     }
-// }
+}
+    
+
 
 class Board{
     int width;
@@ -92,7 +97,27 @@ class Board{
     }
 }
 class Car {
-    
+    int width, height;
+    int x, y;
+    int xSize, ySize;
+
+    Car(int _width, int _height) {
+        width = _width;
+        height = _height;
+        xSize = 300;
+        ySize = height/3;
+    }
+
+    public void display() {
+        rectMode(CENTER);
+        rect(x, y, xSize, ySize);
+    }
+
+    public void move(int _x, int _y) {
+        x = _x;
+        y = _y;
+
+    }
 }
   public void settings() {  fullScreen(2); }
   static public void main(String[] passedArgs) {
