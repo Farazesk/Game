@@ -20,39 +20,38 @@ void draw() {
 }
 
 void keyPressed() {
-    if (key == CODED) {
-        if (keyCode == LEFT) {
-            if (x < width/3) {
-                x = x;
-            } else {
-                x = x - (width/3);
-            }
-            
-        } 
-
-        if (keyCode == RIGHT) {
-            if (x > (width/3) * 2) {
-                x = x;
-            } else {
-                x = x + (width/3);
-            }
-        } 
-
-        if (keyCode == UP) {
-            if (y < (height/3)) {
-                y = y;
-            } else {
-                y = y - (height/3);
-            }
-        }   
-
-        if (keyCode == DOWN) {
-            if (y > (height/3) * 2) {
-                y = y;
-            } else {
-                y = y + (height/3);
-             }
+    if (keyCode == LEFT) {
+        if (x < width/3) {
+            x = x;
+        } else {
+            x = x - (width/3);
         }
+        
+    } 
+
+    if (keyCode == RIGHT) {
+        if (x > (width/3) * 2) {
+            x = x;
+        } else {
+            x = x + (width/3);
+        }
+    } 
+
+    if (keyCode == UP) {
+        if (y < (height/3)) {
+            y = y;
+        } else {
+            y = y - (height/3);
+        }
+    }   
+
+    if (keyCode == DOWN) {
+        if (y > (height/3) * 2) {
+            y = y;
+        } else {
+            y = y + (height/3);
+            }
     }
 }
+
 

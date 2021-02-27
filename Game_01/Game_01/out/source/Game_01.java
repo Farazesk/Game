@@ -36,7 +36,7 @@ public void draw() {
 }
 
 public void keyPressed() {
-    if (key == CODED) {
+    // if (key == CODED) {
         if (keyCode == LEFT) {
             if (x < width/3) {
                 x = x;
@@ -70,7 +70,7 @@ public void keyPressed() {
              }
         }
     }
-}
+// }
 
 class Board{
     int width;
@@ -90,6 +90,9 @@ class Board{
             line(x, 0, x, height);
         }
     }
+}
+class Car {
+    
 }
   public void settings() {  fullScreen(2); }
   static public void main(String[] passedArgs) {
