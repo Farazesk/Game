@@ -14,17 +14,17 @@ import java.io.IOException;
 
 public class Game_01 extends PApplet {
 
-Board board;
-Car car;
-int x, y;
+Board board;  //Board object declaration
+Car car;  //Car object declaration
+int x, y; 
 
 public void setup() {
-    
+      //Fullscreen window on 2nd monitor
     background(0);
 
-    board = new Board(width, height);
-    car = new Car(width, height);
-    
+    board = new Board(width, height);  //Construct board object
+    car = new Car(width, height);  //Construct car object
+
     x = width/2;
     y = height/2;
     
@@ -32,9 +32,9 @@ public void setup() {
 
 public void draw() {
     background(0);
+
     board.display();
 
-    
     car.display();
     car.move(x, y);
 }
